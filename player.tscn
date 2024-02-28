@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8qqi2a8wfucd"]
+
+[ext_resource type="Texture2D" uid="uid://b1us3qkymb7yg" path="res://ship.png" id="1_i2m26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urdwr"]
+size = Vector2(137, 126)
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1, 1.05)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 800
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i2m26")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_urdwr")
