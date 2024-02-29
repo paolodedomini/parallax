@@ -1,17 +1,17 @@
 [gd_scene load_steps=13 format=3 uid="uid://b75b6g1rbuk5r"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_exrwq"]
-[ext_resource type="Texture2D" uid="uid://da2xdxrsf1xyk" path="res://bottom-1.png" id="2_j8s8f"]
-[ext_resource type="PackedScene" uid="uid://c8qqi2a8wfucd" path="res://player.tscn" id="2_snl0a"]
-[ext_resource type="Texture2D" uid="uid://cq5f8xa0rhy43" path="res://back-1.png" id="2_v4flj"]
-[ext_resource type="Texture2D" uid="uid://bcyp752m1ct6v" path="res://back-3.png" id="3_2u3ba"]
-[ext_resource type="Texture2D" uid="uid://b7sgs8b7bakeg" path="res://bottom-2.png" id="3_e00r6"]
-[ext_resource type="Texture2D" uid="uid://beaeokxxm3181" path="res://back-4.png" id="4_5egge"]
-[ext_resource type="Texture2D" uid="uid://coy4i6402ql20" path="res://bottom-3.png" id="4_u33s0"]
-[ext_resource type="Texture2D" uid="uid://q25g2154xrqc" path="res://back2.png" id="5_8kfou"]
-[ext_resource type="Texture2D" uid="uid://c5lqm7jn6a68n" path="res://verticale-1.png" id="9_tyiro"]
-[ext_resource type="Texture2D" uid="uid://djbre2jgqjts0" path="res://top-1.png" id="10_lox6t"]
-[ext_resource type="Script" path="res://player.gd" id="12_wx6jm"]
+[ext_resource type="Script" path="res://level/level.gd" id="1_exrwq"]
+[ext_resource type="Texture2D" uid="uid://da2xdxrsf1xyk" path="res://assets/bottom-1.png" id="2_j8s8f"]
+[ext_resource type="PackedScene" uid="uid://c8qqi2a8wfucd" path="res://player/player.tscn" id="2_snl0a"]
+[ext_resource type="Texture2D" uid="uid://cq5f8xa0rhy43" path="res://assets/back-1.png" id="2_v4flj"]
+[ext_resource type="Texture2D" uid="uid://bcyp752m1ct6v" path="res://assets/back-3.png" id="3_2u3ba"]
+[ext_resource type="Texture2D" uid="uid://b7sgs8b7bakeg" path="res://assets/bottom-2.png" id="3_e00r6"]
+[ext_resource type="Texture2D" uid="uid://beaeokxxm3181" path="res://assets/back-4.png" id="4_5egge"]
+[ext_resource type="Texture2D" uid="uid://coy4i6402ql20" path="res://assets/bottom-3.png" id="4_u33s0"]
+[ext_resource type="Texture2D" uid="uid://q25g2154xrqc" path="res://assets/back2.png" id="5_8kfou"]
+[ext_resource type="Texture2D" uid="uid://c5lqm7jn6a68n" path="res://assets/verticale-1.png" id="9_tyiro"]
+[ext_resource type="Texture2D" uid="uid://djbre2jgqjts0" path="res://assets/top-1.png" id="10_lox6t"]
+[ext_resource type="PackedScene" uid="uid://bubmpwrx2mxaj" path="res://tester/tester.tscn" id="13_ao7ij"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_exrwq")
@@ -87,4 +87,14 @@ position = Vector2(2054, 49)
 texture = ExtResource("10_lox6t")
 
 [node name="player" parent="." instance=ExtResource("2_snl0a")]
-script = ExtResource("12_wx6jm")
+
+[node name="tester" parent="." instance=ExtResource("13_ao7ij")]
+position = Vector2(1098, 159)
+
+[node name="tester2" parent="." instance=ExtResource("13_ao7ij")]
+position = Vector2(1699, 282)
+
+[node name="tester3" parent="." instance=ExtResource("13_ao7ij")]
+position = Vector2(1442, 564)
+
+[node name="lasers" type="Node2D" parent="."]

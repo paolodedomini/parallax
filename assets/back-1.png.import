@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ehncnlm5yj65"
-path="res://.godot/imported/verticale-4.png-9cada4cfcf9e7e6159bce54342c8c91a.ctex"
+uid="uid://cq5f8xa0rhy43"
+path="res://.godot/imported/back-1.png-230df60863eb477a199b63d0c0751d03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://verticale-4.png"
-dest_files=["res://.godot/imported/verticale-4.png-9cada4cfcf9e7e6159bce54342c8c91a.ctex"]
+source_file="res://assets/back-1.png"
+dest_files=["res://.godot/imported/back-1.png-230df60863eb477a199b63d0c0751d03.ctex"]
 
 [params]
 
