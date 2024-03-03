@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8qqi2a8wfucd"]
+[gd_scene load_steps=3 format=3 uid="uid://c8qqi2a8wfucd"]
 
 [ext_resource type="Texture2D" uid="uid://b1us3qkymb7yg" path="res://assets/ship.png" id="1_i2m26"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_ptsxt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_urdwr"]
-size = Vector2(137, 126)
-
 [node name="player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_ptsxt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -21,8 +20,10 @@ position_smoothing_enabled = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_i2m26")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_urdwr")
-
 [node name="laserGun" type="Node2D" parent="."]
 position = Vector2(26, 24)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(17, 26, 23, 29, 29, 24, 24, 20, 30, 14, 52, 15, 58, 15, 61, 12, 53, 0, 32, -13, 17, -14, 4, -13, -11, -13, -17, -18, -23, -20, -33, -20, -42, -27, -48, -28, -51, -20, -56, -21, -56, -15, -54, -12, -52, -6, -54, -1, -54, 7, -54, 11, -61, 18, -61, 20, -54, 26, -50, 26, -42, 22, -35, 19, -26, 20, -23, 27, -21, 29, -13, 25)
+
+[connection signal="laser_shot" from="." to="." method="_on_laser_shot"]

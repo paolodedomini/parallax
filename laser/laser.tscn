@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk127"]
 size = Vector2(18, 5)
 
-[node name="Area2D" type="Area2D"]
+[node name="laser" type="Area2D"]
 collision_layer = 8
 collision_mask = 5
 script = ExtResource("1_mx4gl")

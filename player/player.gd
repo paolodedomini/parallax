@@ -4,9 +4,8 @@ const MAX_SPEED = 600
 const SPEED = 2000.0
 const FRICTION = 1300.0
 var input = Vector2.ZERO
-var laser = preload("res://laser/laser.tscn")
 
-signal laser_shot(laser)
+signal laser_shot()
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
 func get_input():
@@ -32,15 +31,9 @@ func player_movement(delta):
 func _ready():
 	position = Vector2(400, 400)
 	
-func _process(delta):
-	if(Input.is_action_just_pressed("fire")):
-			var laserinstance = laser.instantiate()
-			laserinstance.global_position = $laserGun.global_position
-			print($laserGun.global_position)
-			emit_signal("laser_shot", laserinstance)
-			
-		
 func _physics_process(delta):
-
+	if(Input.is_action_just_pressed("fire")):
+			emit_signal("laser_shot")
+			
+			
 	player_movement(delta)
-

@@ -1,12 +1,30 @@
 extends Area2D
 
 
+signal hit_tester
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position.x = 400
+	
+	var screenSize = get_viewport().size
+	var rng = RandomNumberGenerator.new()
+	var rndX = rng.randi_range(screenSize.x / 2, screenSize.x - 200)
+	var rndY = rng.randi_range(100, screenSize.y - 100)
+	position= Vector2(rndX, rndY)
+
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x += delta * 50
+	pass
+
+
+func _on_area_entered(area): 
+	print('test', area.name)
+	if(area.name == "laser" ):
+		
+		# elimina tutti i singoli laser presenti nella scena che collidono con il target
+		for i in area.get_parent().get_children():
+			i.queue_free()
+		hit_tester.emit()
+	
