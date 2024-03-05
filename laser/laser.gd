@@ -12,4 +12,5 @@ func _process(delta):
 
 #elimina i child che non sono visibili nella scena
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	self.queue_free()
+	#queue_free()
+	pass
