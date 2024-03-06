@@ -78,27 +78,27 @@ texture = ExtResource("5_8kfou")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="level-backgrounds/ParallaxBackground2"]
 
 [node name="Sprite2D" type="Sprite2D" parent="level-backgrounds/ParallaxBackground2/ParallaxLayer"]
-position = Vector2(592, 732.5)
+position = Vector2(300.5, 732.5)
 scale = Vector2(1, 1.38636)
 texture = ExtResource("2_j8s8f")
 
 [node name="Sprite2D2" type="Sprite2D" parent="level-backgrounds/ParallaxBackground2/ParallaxLayer"]
-position = Vector2(2965, 736)
+position = Vector2(2673.5, 736)
 scale = Vector2(1, 1.41818)
 texture = ExtResource("3_e00r6")
 
 [node name="Sprite2D3" type="Sprite2D" parent="level-backgrounds/ParallaxBackground2/ParallaxLayer"]
-position = Vector2(1794, 735.25)
+position = Vector2(1502.5, 735.25)
 scale = Vector2(1, 1.4095)
 texture = ExtResource("4_u33s0")
 
 [node name="Sprite2D4" type="Sprite2D" parent="level-backgrounds/ParallaxBackground2/ParallaxLayer"]
-position = Vector2(574.25, 327.122)
+position = Vector2(282.75, 327.122)
 scale = Vector2(0.855705, 0.855705)
 texture = ExtResource("9_tyiro")
 
 [node name="Sprite2D5" type="Sprite2D" parent="level-backgrounds/ParallaxBackground2/ParallaxLayer"]
-position = Vector2(2054, 49)
+position = Vector2(1762.5, 49)
 texture = ExtResource("10_lox6t")
 
 [node name="bottom" type="StaticBody2D" parent="level-backgrounds"]
