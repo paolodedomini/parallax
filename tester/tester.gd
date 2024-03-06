@@ -22,7 +22,7 @@ func _process(delta):
 func _on_area_entered(area): 
 
 	if(area.is_in_group("projectile") ):
-		# per le collisioni utilizzare i GRUPPI!!!
+		# per le collisioni utilizzare i GRUPPI!!! con is_in_group
 		# elimina tutti i singoli laser presenti nella scena che collidono con il target
 		for i in area.get_parent().get_children():
 			i.queue_free()

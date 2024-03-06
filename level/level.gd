@@ -8,6 +8,7 @@ func hit_tester():
 	target_hit+=1
 
 func _ready():
+	Dialogic.start("level1")
 	#sottoscrivi il signal "laser_shot" ed esegui la funzione
 	for n in 4:
 		var t = tester.instantiate()
