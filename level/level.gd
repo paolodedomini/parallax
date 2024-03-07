@@ -1,23 +1,35 @@
 extends Node2D
 
 @onready var player = $player
-var tester = preload("res://tester/tester.tscn")
+var total_shot = 0
 var target_hit = 0
-# Called when the node enters the scene tree for the first time.
-func hit_tester():
-	target_hit+=1
+var tester = preload("res://tester/tester.tscn")
+		
+func is_shot_exited():
+	total_shot += 1
+	print("lost",total_shot)
+	if total_shot >= 4:
+		print('lost')
+		get_tree().reload_current_scene()
+
+func is_target_hit():
+	total_shot += 1
+	target_hit += 1
+	if total_shot == 4 && target_hit == 4:
+		print('win')
+	if target_hit == 4 && !target_hit == 4:
+		get_tree().reload_current_scene()
 
 func _ready():
-
-	#sottoscrivi il signal "laser_shot" ed esegui la funzione
+	$projectiles.connect("is_laser_exited_screen", is_shot_exited)
 	for n in 4:
 		var t = tester.instantiate()
-		t.connect("hit_tester", hit_tester)
+		t.connect("hit_tester", is_target_hit)
 		add_child(t)
-		
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-
+func _physics_process(delta):
+	
 	$"level-backgrounds/ParallaxBackground2".offset.x -= delta * 70
 	$"level-backgrounds/ParallaxBackground".offset.x -= delta * 20

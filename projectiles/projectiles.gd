@@ -2,11 +2,18 @@ extends Node2D
 var laser = preload("res://laser/laser.tscn")
 @onready var player = get_parent().get_node('player')
 
+signal is_laser_exited_screen
+
+func is_laser_exited():
+	is_laser_exited_screen.emit()
+
 func _on_player_laser_shot():
+	
 	var l = laser.instantiate()
+	l.connect("is_out_screen", is_laser_exited )
 	self.add_child(l)
 	l.global_position = player.get_node('laserGun').global_position
-	
+
 	
 	
 
