@@ -15,10 +15,12 @@ func is_shot_exited():
 func is_target_hit():
 	total_shot += 1
 	target_hit += 1
-	if total_shot == 4 && target_hit == 4:
-		print('win')
-	if target_hit == 4 && !target_hit == 4:
+	if total_shot >= 4 && target_hit < 4:
+		print('lost')
 		get_tree().reload_current_scene()
+	if target_hit == 4:
+		print('win')
+	
 
 func _ready():
 	$projectiles.connect("is_laser_exited_screen", is_shot_exited)
