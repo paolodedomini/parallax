@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="parallax"
-run/main_scene="res://level/level.tscn"
+run/main_scene="res://level/intro/intro.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Global.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalControl="*res://Control.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogic]
 
@@ -29,8 +30,8 @@ directories/dch_directory={
 directories/dtl_directory={
 "level1": "res://dialogues/level1.dtl"
 }
-layout/style_list=["res://dialogues/style.tres"]
-layout/default_style="res://dialogues/style.tres"
+layout/style_list=["res://dialogues/custom/CustomStyle/New_File.tres"]
+layout/default_style="res://dialogues/custom/CustomStyle/New_File.tres"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
@@ -50,15 +51,21 @@ text/autopauses={}
 variables={}
 glossary/default_case_sensitive=true
 
+[dialogue_manager]
+
+general/custom_test_scene_path="res://dialog/dialogues.tscn"
+general/balloon_path="res://dialog/balloon.tscn"
+
 [display]
 
 window/size/viewport_width=1280
-window/size/viewport_height=800
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+window/dpi/allow_hidpi=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
@@ -96,6 +103,10 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialog/intro.dialogue")
 
 [layer_names]
 

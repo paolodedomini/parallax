@@ -3,13 +3,12 @@ extends Node2D
 @onready var player = $player
 var total_shot = 0
 var target_hit = 0
-var tester = preload("res://tester/tester.tscn")
+@onready var tester = preload("res://tester/tester.tscn")
 		
 func is_shot_exited():
 	total_shot += 1
-	print("lost",total_shot)
+	
 	if total_shot >= 4:
-		print('lost')
 		get_tree().reload_current_scene()
 
 func is_target_hit():
@@ -33,5 +32,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	$"level-backgrounds/ParallaxBackground2".offset.x -= delta * 70
-	$"level-backgrounds/ParallaxBackground".offset.x -= delta * 20
+	$"level-backgrounds/ParallaxBackground2".offset.x -= delta * 50
+	$"level-backgrounds/ParallaxBackground".offset.x -= delta * 10

@@ -1,6 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://77ykuwovmet5"]
+[gd_scene load_steps=6 format=3 uid="uid://77ykuwovmet5"]
 
 [ext_resource type="Script" path="res://level/intro/intro.gd" id="1_p3l4l"]
+[ext_resource type="Texture2D" uid="uid://c6utqe7g00cwj" path="res://assets/back_intro.jpg" id="2_k0h8o"]
+[ext_resource type="Script" path="res://level/intro/BackIntro.gd" id="3_m04jk"]
+[ext_resource type="Texture2D" uid="uid://c5lqm7jn6a68n" path="res://assets/verticale-1.png" id="4_h241p"]
+[ext_resource type="Texture2D" uid="uid://dpmapm70oyrjm" path="res://assets/verticale-3.png" id="5_r78ek"]
 
 [node name="intro" type="Node2D"]
 script = ExtResource("1_p3l4l")
+
+[node name="background" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+offset_right = 1295.0
+offset_bottom = 800.0
+color = Color(0, 0, 0, 1)
+
+[node name="BackIntro" type="Sprite2D" parent="background"]
+position = Vector2(675, 362)
+texture = ExtResource("2_k0h8o")
+script = ExtResource("3_m04jk")
+
+[node name="Verticale-1" type="Sprite2D" parent="background"]
+position = Vector2(1136, 368)
+scale = Vector2(1.69463, 1.38006)
+texture = ExtResource("4_h241p")
+
+[node name="Verticale-3" type="Sprite2D" parent="background"]
+position = Vector2(723.25, 324.25)
+scale = Vector2(1.34685, 1.40706)
+texture = ExtResource("5_r78ek")
+
+[node name="Verticale-2" type="Sprite2D" parent="background"]
+position = Vector2(241, 344)
+scale = Vector2(1.72148, 1.44453)
+texture = ExtResource("4_h241p")

@@ -4,10 +4,12 @@ extends Area2D
 signal hit_tester
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var screenSize = get_viewport().size
+	var screen = DisplayServer.screen_get_size()
+	print(screen)
+
 	var rng = RandomNumberGenerator.new()
-	var rndX = rng.randi_range(screenSize.x / 2, screenSize.x - 200)
-	var rndY = rng.randi_range(100, screenSize.y - 100)
+	var rndX = rng.randi_range(600,1200)
+	var rndY = rng.randi_range(100,  600)
 	position= Vector2(rndX, rndY)
 	pass # Replace with function body.
 

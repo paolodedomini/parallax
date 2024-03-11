@@ -26,12 +26,14 @@ size = Vector2(24, 890.25)
 script = ExtResource("1_exrwq")
 
 [node name="player" parent="." instance=ExtResource("2_snl0a")]
+position = Vector2(300, 429)
 
 [node name="projectiles" parent="." instance=ExtResource("3_00ata")]
 
 [node name="level-backgrounds" type="Node2D" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="level-backgrounds"]
+scroll_offset = Vector2(807.81, 682.925)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="level-backgrounds/ParallaxBackground"]
 motion_scale = Vector2(0.3, 1)
@@ -74,6 +76,7 @@ scale = Vector2(0.646841, 0.680007)
 texture = ExtResource("5_8kfou")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="level-backgrounds"]
+scroll_offset = Vector2(807.81, 682.925)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="level-backgrounds/ParallaxBackground2"]
 
