@@ -9,6 +9,8 @@ func goToScene():
 
 func _ready():
 	DialogueManager.show_dialogue_balloon(load("res://dialog/intro.dialogue"), "start")
+	print(DialogueManager.show_dialogue_balloon(load("res://dialog/intro.dialogue"), "start"))
+	
 	pass # Replace with function body.
 
 
