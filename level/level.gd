@@ -14,6 +14,7 @@ func is_shot_exited():
 func is_target_hit():
 	total_shot += 1
 	target_hit += 1
+
 	if total_shot >= 4 && target_hit < 4:
 		print('lost')
 		get_tree().reload_current_scene()
@@ -27,10 +28,12 @@ func _ready():
 		var t = tester.instantiate()
 		t.connect("hit_tester", is_target_hit)
 		add_child(t)
-	
+		
+		
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	
+
 	$"level-backgrounds/ParallaxBackground2".offset.x -= delta * 50
 	$"level-backgrounds/ParallaxBackground".offset.x -= delta * 10

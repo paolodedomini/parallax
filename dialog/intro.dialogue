@@ -3,9 +3,12 @@
 Voice: [[Hi|Hello|Howdy]], this is some dialogue.
 Voice: Here are some choices.
 - First one
-	Voice: You picked the first one.
+	do Global.take_the_pill()
+	Voice: {{Global.is_pill_taken}}.
+	
 - Second one
-	Voice: You picked the second one.
+	do emit("change_scene")
+	=> END
 - Start again => start
 - End the conversation => END
 Voice: For more information see the online documentation.

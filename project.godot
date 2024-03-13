@@ -53,6 +53,7 @@ glossary/default_case_sensitive=true
 
 [dialogue_manager]
 
+general/states=["Global"]
 general/custom_test_scene_path="res://dialog/dialogues.tscn"
 general/balloon_path="res://dialog/balloon.tscn"
 
