@@ -1,16 +1,30 @@
 ~ start
 
-Voice: [[Hi|Hello|Howdy]], this is some dialogue.
-Voice: Here are some choices.
-- First one
+Voice: Buongiorno Pavlov.
+Voice: Come ti senti oggi?
+Pavlov: ...non...non ho molto equilibrio e la nausea...
+Pavlov: Potete fare qualcosa per la nausea?
+Voice: Accanto all'interfono c'è una pillola di Remedio.
+Pavlov: Non voglio diventare come uno degli zombie! Voglio solo qualcosa per la nausea...
+Voice: Fai il bravo...
+- Prendi la pillola
 	do Global.take_the_pill()
-	Voice: {{Global.is_pill_taken}}.
-	
-- Second one
-	do emit("change_scene")
-	=> END
-- Start again => start
-- End the conversation => END
-Voice: For more information see the online documentation.
-
+	Voice: ottimo! Tra poco starai meglio.
+- Rifiuta
+	Voice: Hai fatto una scelta rischiosa e stupida.
+Voice: In ogni caso stai migliorando nei test.
+Pavlov: ...maledetti test...
+Voice: Oggi è un giorno importante. 
+Voice: è fondamentale che tu passi la valutazione di precisione.
+	   Se tutti i valori saranno nella norma, potremo finalmente partire!
+Pavlov: Dovrei essere contento? Non ho scelto io di stare qui.
+Voice: ah! Non essere stupido
+Voice: Tu hai avuto il privilegio di avere uno scopo.
+Voice: Non hai bisogno di scegliere. La storia ha scelto per te.
+Pavlov: Privilegio?
+Pavlov: Tu non sai niente.
+		Quella macchina...mi sta...consumando
+Voice: Tu e quella macchina siete una speranza. Adesso vestiti e presentati alla rampa.
+do emit("change_scene")
 => END
+
